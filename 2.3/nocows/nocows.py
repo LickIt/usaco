@@ -3,8 +3,6 @@ ID: giliev91
 LANG: PYTHON2
 TASK: nocows
 """
-from collections import namedtuple
-
 with open("nocows.in", "r") as f:
     N, K = map(int, f.readline().strip().split())
 
@@ -17,7 +15,7 @@ for k in range(2, K+1):
         # for i in range(1, n-1):
         #     trees[k][n] += trees[k-1][i] * trees[k-1][n-i-1]
         #     trees[k][n] -= trees[k-2][i] * trees[k-2][n-i-1]
-        
+
         # python is slow so halve the loop .....
         for i in range(1, n//2):
             trees[k][n] += 2 * trees[k-1][i] * trees[k-1][n-i-1]
@@ -27,7 +25,7 @@ for k in range(2, K+1):
             i = n // 2
             trees[k][n] += trees[k-1][i] * trees[k-1][n-i-1]
             trees[k][n] -= trees[k-2][i] * trees[k-2][n-i-1]
-        
+
         trees[k][n] %= 9901
 
 with open("nocows.out", "w") as f:
