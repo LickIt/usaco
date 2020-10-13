@@ -3,7 +3,6 @@ ID: giliev91
 LANG: PYTHON3
 TASK: fact4
 """
-from math import floor, log
 
 
 def input():
